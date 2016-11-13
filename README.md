@@ -1,3 +1,0 @@
-# cs_2016_fall_24_Nikolaev_Denis
-# cs_2016_fall_24_Nikolaev_Denis
-# cs_2016_fall_24_Nikolaev_Denis
