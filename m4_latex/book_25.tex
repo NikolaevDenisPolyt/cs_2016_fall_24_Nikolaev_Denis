@@ -1,4 +1,4 @@
-\documentclass{book} 
+\documentclass{book}
 
 %% Language and font encodings 
 \usepackage[english]{babel} 
@@ -6,7 +6,7 @@
 \usepackage[T1]{fontenc} 
 \usepackage{fancyhdr} 
 %% Sets page size and margins 
-\usepackage[a4paper,top=3cm,bottom=2cm,left=4cm,right=2cm,marginparwidth=1.95cm]{geometry} 
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=2cm,marginparwidth=1cm]{geometry} 
 \usepackage{xcolor} 
 %% Useful packages 
 \usepackage{amsmath} 
@@ -14,34 +14,44 @@
 \usepackage[colorinlistoftodos]{todonotes} 
 \usepackage[colorlinks=true, allcolors=blue]{hyperref} 
 \usepackage{setspace} 
-
+\setcounter{chapter}{5}
+\setcounter{section}{3}
+\setlength{\headheight}{14pt}
+\newcounter{pro1}
+\setcounter{pro1}{30}
+\newcommand{\pro}{\par\addtocounter{pro1}{1}
+\textbf{Problem \arabic{chapter}.\arabic{pro1} }\quad}
+\setcounter{equation}{37}
+\definecolor{light-gray}{rgb}{0.8,0.8,0.8}
 \begin{document} 
 \pagestyle{fancy} 
+
 % этим мы убеждаемся, что заголовки глав и 
 % разделов используют нижний регистр. 
-\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\headrulewidth}{0pt}
 \fancyhf{} % убираем текущие установки для колонтитулов 
 
 \fancyhead[RO]{\large \textsl {\textbf{93}}} 
 \fancyhead[LO]{\large \textsl{5.4 Successive approximation: How deep is the well?}} 
-\[\Large t_{1}=T-\frac{h_{0}}{c_{s}}\approx 3.76s.\eqno{(5.38)}\] 
+\begin{equation} 
+\Large t_{1}=T-\frac{h_{0}}{c_{s}}\approx 3.76s.
+\end{equation} 
 \Large \textrm{In that time, the rock falls a distanc $gt^{2}/2$, so the next approximation to the depth is} 
-\[\Large h_{1}=\frac{1}{2}gt_{1}^{2}\approx 70.87m.\eqno{(5.39)}\] 
-\large\textsl{Is this approximate depth an overestimate or underestimate? How accurate is it?} \\ 
-\\
+\begin{equation}
+\Large h_{1}=\frac{1}{2}gt_{1}^{2}\approx 70.87m.
+\end{equation} 
+ \large\textsl{Is this approximate depth an overestimate or underestimate? How accurate is it?} \\ 
 \Large \textrm{The calculation of $h_{1}$ used $h_{0}$ to estimate the sound-travel time. Because 
 $h_{0}$ overestimates the depth, the procedure overestimates the sound-travel 
 time and, by the same amount, underestimates the free-fall time. Thus 
 h1 underestimates the depth. Indeed, $h_{1}$ is slightly smaller than the true 
 depth of roughly 71.56 m—but by only 1.3\% .} \\ 
-\\ 
 \Large\textrm{The method of successive approximation has several advantages over solving the quadratic formula exactly. First, it helps us develop a physical 
 understanding of the system; we realize, for example, that most of the 
 T = 4 s is spent in free fall, so the depth is roughly $gT^{2}/2$. Second, it 
 has a pictorial explanation (Problem 5.34). Third, it gives a sufficiently 
 accurate answer quickly. If you want to know whether it is safe to jump 
 into the well, why calculate the depth to three decimal places?} \\ 
-\\ 
 \Large\textrm{Finally, the method can handle small changes in the model. Maybe the 
 speed of sound varies with depth, or air resistance becomes important 
 (Problem 5.32). Then the brute-force, quadratic-formula method fails. The 
@@ -51,16 +61,15 @@ have no closed-form solution. Therefore, a small change to a solvable
 model usually produces an intractable model—if we demand an exact 
 answer. The method of successive approximation is a robust alternative 
 that produces low-entropy, comprehensible solutions .} \\ 
-\\ 
-\large\textrm{ \textbf{Problem 5.31 Parameter-value inaccuracies}\\ 
-\\ 
+\colorbox{light-gray}{
+\begin{minipage}{\textwidth}
+\large\textrm{ \textbf{ \textbf\pro Parameter-value inaccuracies}\\ 
 What is $h_{2}$, the second approximation to the depth? Compare the error in $h_{1}$ 
 and $h_{2}$ with the error made by using $g=10ms^{-2}$.\\ 
-\\ 
-\large\textbf{Problem 5.32 Effect of air resistance}\\ 
-\\ 
+\large\textbf{\pro Effect of air resistance}\\ 
 Roughly what fractional error in the depth is produced by neglecting air resistance (Section 2.4.2)? Compare this error to the error in the first approximation \\ 
 $h_{1}$ and in the second approximation $h_{2}$ (Problem 5.31).} \\ 
+\end{minipage}}
 %****************************************************************************************** 
 %****************************************************************************************** 
 \newpage 
@@ -72,23 +81,24 @@ $h_{1}$ and in the second approximation $h_{2}$ (Problem 5.31).} \\
 
 \fancyhead[LE]{\large \textsl {\textbf{94}}} 
 \fancyhead[RE]{\large \textsl{5 Taking out the big part}} 
-
-\large\textrm{\textbf{Problem 5.33 Dimensionless form of the well-depth analysis} \\ 
+\colorbox{light-gray}{
+\begin{minipage}{\textwidth}
+\large\textrm{\textbf{\pro Dimensionless form of the well-depth analysis} \\ 
 Even the messiest results are cleaner and have lower entropy in dimensionless 
 form. The four quantities h, g, T, and $c_{s}$
 produce two independent dimensionless 
 groups (Section 2.4.1). An intuitively reasonable pair are} \\ 
 \\ 
-\[\bar{h}\equiv \frac{h}{gT^{2}} \qquad and \qquad \bar{T}\equiv \frac{gT}{c_{s}} .\eqno{(5.40)}\] \\ 
+\begin{equation} \bar{h}\equiv \frac{h}{gT^{2}} \qquad and \qquad \bar{T}\equiv \frac{gT}{c_{s}} .\end{equation}  \\ 
 \textrm{ 
 a. What is a physical interpretation of $\bar{T}$?\\ 
 b. With two groups, the general dimensionless form is $\bar{h}$ = f($\bar{T}$). What is $\bar{h}$ in 
 the easy case $\bar{T}$ $\rightarrow $ 0? \\ 
 c. Rewrite the quadratic-formula solution} \\ 
-\[h=\left ( \frac{-2\sqrt{g}+\sqrt{2/g+4T/c_{s}}}{2/c_{s}} \right )^{2} \eqno{(5.41)}\] \\ 
+\begin{equation}h=\left ( \frac{-2\sqrt{g}+\sqrt{2/g+4T/c_{s}}}{2/c_{s}} \right )^{2} \end{equation} \\ 
 \textrm{as $\bar{h}$= f($\bar{T}$). Then check that f($\bar{T}$) behaves correctly in the easy case $\bar{T}$ $\rightarrow $ 0} \\ 
 \\ 
-\large\textrm{\textbf{Problem 5.34 Spacetime diagram of the well depth} \\ 
+\large\textrm{\textbf{\pro Spacetime diagram of the well depth} \\ 
 How does the spacetime diagram [44] illustrate 
 the successive approximation of the well depth? 
 On the diagram, mark $h_{0}$ (the zeroth approximation to the depth), $h_{1}$ , and the exact depth 
@@ -96,8 +106,10 @@ h. Mark $t_{0}$ , the zeroth approximation to the
 free-fall time. Why are portions of the rock and 
 sound-wavefront curves dotted? How would 
 you redraw the diagram if the speed of sound 
-doubled? If g doubled?} \\ 
-\\ 
+doubled? If g doubled?}
+\end{minipage}}
+\\
+\\
 \Large\textrm{ \textbf{5.5 Daunting trigonometric integral}\\ 
 \\ 
 The final example of taking out the big part is to estimate a daunting 
@@ -108,9 +120,9 @@ regale us with their favorite mathematics and physics problems.
 The integral appeared on the mathematical-preliminaries exam to enter 
 the Landau Institute for Theoretical Physics in the former USSR. The 
 problem is to evaluate}\\ 
-\\ 
-\[\int_{-\pi /2}^{\pi /2}(\cos t)^{100}dt \eqno{(5.42)}\] 
-
+\\ \begin{equation}
+\int_{-\pi /2}^{\pi /2}(\cos t)^{100}dt
+\end{equation} 
 %************************************************************************************* 
 %*********************************************************************************** 
 \newpage 
@@ -125,21 +137,30 @@ problem is to evaluate}\\
 \Large\textrm{to within 5 \% in less than 5 min without using a calculator or computer!\\ 
 That $(\cos t)^{100}$ looks frightening. Most trigonometric identities do not 
 help. The usually helpful identity $(\cos t)^{2}=(\cos 2t -1)/2$ produces only} 
-\[(\cos t)^{100}=\left ( \frac{\cos 2t-1}{2} \right )^{50} , \eqno{(5.43)}\] 
+\begin{equation}
+(\cos t)^{100}=\left ( \frac{\cos 2t-1}{2} \right )^{50} , 
+\end{equation}
+
 \Large \textrm{which becomes a trigonometric monster upon expanding the 50th power. 
 A clue pointing to a simpler method is that 5\% accuracy is sufficient—so, 
 find the big part! The integrand is largest when t is near zero. There,
-$\cot t \approx 1-t^{2}/2$ (Problem 5.20), so the integrand is roughly} 
-\[(\cos t)^{100}\approx \left (1- \frac{t^{2}}{2} \right )^{100} . \eqno{(5.44)}\] 
+$\cot t \approx 1-t^{2}/2$ (Problem 5.20), so the integrand is roughly}
+\begin{equation}
+(\cos t)^{100}\approx \left (1- \frac{t^{2}}{2} \right )^{100} . 
+\end{equation}
 \Large\textrm{It has the familiar form $(1 + z)^{n}$, with fractional change $z = −t^{2}/2$ and 
 exponent n = 100. When t is small, $z = −t^{2}/2$ is tiny, so $(1 + z)^{n}$ may be 
-approximated using the results of Section 5.3.4:} 
+approximated using the results of Section 5.3.4:}
 \begin{flushleft}
-$$ (1+z)^{n}\approx \left\{\begin{matrix} 1+nz &  (z\ll 1) \quad \textrm{and} \quad nz\ll 1 &\\ e ^{nz}& (z\ll 1 \quad \textrm{and} \quad nz \quad \textrm{unrestricted}) .& \end{matrix}\right. \eqno{(5.45)} $$
+\begin{equation}
+ (1+z)^{n}\approx \left\{\begin{matrix} 1+nz &  (z\ll 1) \quad \textrm{and} \quad nz\ll 1 &\\ e ^{nz}& (z\ll 1 \quad \textrm{and} \quad nz \quad \textrm{unrestricted}) .& \end{matrix}\right.  
+\end{equation}
 \end{flushleft}
 \Large \textrm{Because the exponent $n$ is large, $nz$ can be large even when $t$ and $z$ are 
 small. Therefore, the safest approximation is $(1 + z)^{n}\approx e ^{nz}$; then} 
-\[(\cos t)^{100}\approx \left (1- \frac{t^{2}}{2} \right )^{100} \approx e ^{-50t^{2}} . \eqno{(5.46)}\] 
+\begin{equation}
+(\cos t)^{100}\approx \left (1- \frac{t^{2}}{2} \right )^{100} \approx e ^{-50t^{2}} .
+\end{equation}
 \Large\textrm{A cosine raised to a high power becomes a Gaussian! 
 As a check on this surprising conclusion, computergenerated plots of $(\cos t)^{n}$ for n = 1...5 show a 
 Gaussian bell shape taking form as n increases. \\
@@ -149,7 +170,10 @@ these endpoints are far outside the region where $\cot t \approx 1-t^{2}/2$ is a
 accurate approximation. Fortunately, this issue contributes only a tiny 
 error (Problem 5.35). Ignoring this error turns the original integral into a 
 Gaussian integral with finite limits: } 
-\[\int_{-\pi /2}^{\pi /2}(\cos t)^{100}dt \approx \int_{-\pi /2}^{\pi /2} e ^{-50t^{2}}dt .\eqno{(5.47)}\] 
+\begin{equation}
+\int_{-\pi /2}^{\pi /2}(\cos t)^{100}dt \approx \int_{-\pi /2}^{\pi /2} e ^{-50t^{2}}dt
+\end{equation}
+
 
 %************************************************************************************* 
 %*********************************************************************************** 
@@ -165,44 +189,51 @@ Gaussian integral with finite limits: }
 \Large\textrm{Unfortunately, with finite limits the integral has no closed form. But 
 extending the limits to infinity produces a closed form while contributing 
 almost no error (Problem 5.36). The approximation chain is now } 
-\[\int_{-\pi /2}^{\pi /2}(\cos t)^{100}dt \approx \int_{-\pi /2}^{\pi /2} e ^{-50t^{2}}dt \approx \int_{-\infty }^{\infty } e ^{-50t^{2}}dt. \eqno{(5.48)}\] \\ 
-
-\large\textrm{\textbf{Problem 5.35 Using the original limits} \\ 
+\begin{equation}
+\int_{-\pi /2}^{\pi /2}(\cos t)^{100}dt \approx \int_{-\pi /2}^{\pi /2} e ^{-50t^{2}}dt \approx \int_{-\infty }^{\infty } e ^{-50t^{2}}dt. \end{equation}\\ 
+\colorbox{light-gray}{
+\begin{minipage}{\textwidth}
+\large\textrm{\textbf{\pro Using the original limits} \\ 
 The approximation $\cot t \approx 1-t^{2}/2$ requires that t be small. Why doesn’t using 
 the approximation outside the small-t range contribute a significant error?} \\ 
-\\ 
-\textrm{\textbf{Problem 5.36 Extending the limits} \\ 
+
+\textrm{\textbf{\pro Extending the limits} \\ 
 Why doesn’t extending the integration limits from $\pm\pi /2$ to $\pm\infty$ contribute a 
 significant error?} \\ 
-\\ 
+ \end{minipage}}
 \Large\textrm{The last integral is an old friend (Section 2.1):$\int_{-\infty}^{\infty} e^{-\alpha t^{2}} dt =\sqrt{\pi /\alpha }$. With 
 $\alpha$ = 50, the integral becomes $\pi$/50. Conveniently, 50 is roughly 16$\pi$, so 
 the square root—and our 5\% estimate—is roughly 0.25. 
 For comparison, the exact integral is (Problem 5.41) 
 } 
-\[\int_{-\pi /2}^{\pi /2}(\cos t)^{100}dt=2^{-n}\begin{pmatrix} 
+\begin{equation}
+\int_{-\pi /2}^{\pi /2}(\cos t)^{100}dt=2^{-n}\begin{pmatrix} 
 n \\ 
 n/2 
-\end{pmatrix} \pi . \eqno{(5.49)} \] \\ 
+\end{pmatrix} \pi .  
+\end{equation} 
 \Large\textrm{When n = 100, the binomial coefficient and power of two produce} \\ 
-\[\large \frac{12611418068195524166851562157}{158456325028528675187087900672}\pi \approx 0.25003696348037. \eqno{(5.50)}\] \\ 
+\begin{equation}
+\large \frac{12611418068195524166851562157}{158456325028528675187087900672}\pi \approx 0.25003696348037. \end{equation}  \\ 
 \Large\textrm{Our 5-minute, within-5\% estimate of 0.25 is accurate to almost 0.01\%!} \\ 
-\\
-\large\textrm{\textbf{Problem 5.37 Sketching the approximations} \\  
+\colorbox{light-gray}{
+\begin{minipage}{\textwidth}
+
+\large\textrm{\textbf { \pro Sketching the approximations} \\  
 Plot $(\cos t)^{100}$ and its two approximations $ e ^{-50t^{2}}$ 
-and 1 $-50t^{2}$.} \\ 
-\\ 
-\large\textrm{\textbf{Problem 5.38 Simplest approximation} \\ 
-\\ 
+and 1 $-50t^{2}$.} \\
+\large\textrm{\textbf{\pro Simplest approximation} \\  
 Use the linear fractional-change approximation $(1 − t^{2}/2)^{100} \approx 1 − 50t^{2}$ to 
 approximate the integrand; then integrate it over the range where $1 − 50t^{2}$ is 
 positive. How close is the result of this 1-minute method to the exact value 
 0.2500 . . .?} \\ 
 \\ 
-\large\textrm{\textbf{Problem 5.39 Huge exponent} \\ 
+\large\textrm{\textbf{\pro Huge exponent} \\ 
 \\ 
 Estimate} 
 \\ 
-\[\int_{-\pi /2}^{\pi /2}(\cos t)^{100}dt . \eqno{(5.51)}\] 
-
+\begin{equation} 
+\int_{-\pi /2}^{\pi /2}(\cos t)^{100}dt .
+ \end{equation}
+ \end{minipage}}
 \end{document}
