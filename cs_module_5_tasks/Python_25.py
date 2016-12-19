@@ -32,9 +32,12 @@ while True:
         sum1 = input("Введите числа через пробел:")
         sum1 = sum1.split()
         b1 = []
+        h = 0
         for i in sum1:
             b1.append(float(i))
-        h = sum(b1)
+        for i in b1:
+            h += i
+
         print(h)
     elif user_input == "Сумма2" or user_input == "1.2":
         lst = input("Введите числа через пробел:")
@@ -150,12 +153,13 @@ while True:
         t = np.arange(0, t4, 0.01)
         t1 = v * math.cos(m) * t
         t2 = (v * math.sin(m) * t - (g * t ** 2) / 2)
-        plt.plot(t1, t2, )
+        plt.plot(t1, t2)
         plt.axis('equal')
         plt.xlabel(r'$S$')  # Метка по оси x в формате TeX
         plt.ylabel(r'$H$')  # Метка по оси y в формате TeX
         plt.title(r'$Speed on Mars$')  # Заголовок в формате TeX
         plt.grid(True)  # Сетка
         plt.show()  # Показать график
+
     else:
         print("Пожалуйста,проверьте правильность введенной команды")
