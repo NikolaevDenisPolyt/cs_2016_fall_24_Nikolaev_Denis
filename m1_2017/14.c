@@ -1,17 +1,30 @@
 #include <stdio.h>
 #include <string.h>
-#include <locale.h>
-int main()
-{setlocale(LC_CTYPE, "Russian");
-int i,j,b[1000];
-char c[1000];
-gets(c);
-i=strlen(c);
-for(i=i-1;i!=-1;i--)
+char reverse( char *c)
 {
-printf("%c",c[i]);
-
+int j=0,i,m;
+char mas1[1000];
+m=strlen(c);
+for(i=m-1;i>=0;--i)
+{
+mas1[j]=c[i];
+j++;
 }
-
+for(i=0;c[i]!='\0';++i)
+{
+c[i]=mas1[i];
+}
+return *c;
+}
+int main()
+{
+int i;
+char mas1[1000];
+gets(mas1);
+reverse(mas1);
+for( i=0;mas1[i]!='\0';++i)
+{
+printf("%c",mas1[i]);
+}
 return 0;
 }
