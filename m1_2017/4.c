@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define swap(t,x,y) ({t c = a; a = b; b = c;})
+#define swap(t,x,y) {t c = a; a = b; b = c;}
 int main()
 {
     int a, b;
