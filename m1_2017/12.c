@@ -3,21 +3,17 @@
 #include <locale.h>
 int main()
 {setlocale(LC_CTYPE, "Russian");
-int i,b[1000];
-char c[1000];
-gets(c);
-for(i=0;c[i]!='\0';i++)
-{
-b[i]=c[i];
-
-}
-char max1 = b[0];
-for(i;i>=0;i--)
-{
-  if (b[i]>max1)
-      max1=b[i];
-}
-printf("Наибольший ASCII код:%i\n",max1);
-printf("\n\n");
-return 0;
+    char c,a[100];
+    int as[100],i=0,max;
+    max=as[0];
+    printf("Введите строку:\n");
+    gets(a);
+    int l=strlen(a);
+    for (i=0;i<l;++i){
+        as[i]=(int)a[i];
+        if (max<as[i])
+            max=as[i];
+    }
+    printf("Наибольший ASCII код - %c\n", (char)max);
+    return 0;
 }
