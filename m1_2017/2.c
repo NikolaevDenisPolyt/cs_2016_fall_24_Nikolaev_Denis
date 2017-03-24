@@ -3,8 +3,10 @@
 int main()
 {setlocale(LC_CTYPE, "Russian");
     int day, mounth, change;
-    printf("Введите день и месяц вашего рождения(xx.xx):");
-    scanf("%i.%i", &day, &mounth);
+    printf("Введите день вашего рождения:");
+    scanf("%i", &day);
+    printf("Введите месяц вашего рождения):");
+    scanf("%i", &mounth);
     change = mounth;
     mounth = day;
     day = change;
