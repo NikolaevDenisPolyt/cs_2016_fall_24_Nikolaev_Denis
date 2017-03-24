@@ -1,8 +1,11 @@
 #include <stdio.h>
+#include <locale.h>
 #include <math.h>
 #include <string.h>
-int r(char *a)
-{
+
+int opoc(char *a)
+
+{setlocale(LC_CTYPE, "Russian");
 int j,s=0,i;
 j=strlen(a)-1;
 for(i=0;a[i]!='\0';++i)
@@ -14,9 +17,10 @@ j--;
 return s;
 }
 int main() {
+  setlocale(LC_CTYPE, "Russian");
 char N[1000];
-printf("Введите двоичное число ");
+printf("Введите двоичное число:");
 gets(N);
-printf("%d\n",r(N));
+printf("%d\n",opoc(N));
 return 0;
 }
