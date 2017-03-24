@@ -6,15 +6,15 @@
 int opoc(char *a)
 
 {setlocale(LC_CTYPE, "Russian");
-int j,s=0,i;
+int j,dec=0,i;
 j=strlen(a)-1;
 for(i=0;a[i]!='\0';++i)
 {
 if(a[i]=='1')
-s=s+pow(2,j);
+dec=dec+pow(2,j);
 j--;
 }
-return s;
+return dec;
 }
 int main() {
   setlocale(LC_CTYPE, "Russian");
