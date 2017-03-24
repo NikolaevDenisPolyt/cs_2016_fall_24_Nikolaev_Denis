@@ -4,6 +4,7 @@ int main() {
 
     setlocale(LC_CTYPE, "Russian");
 	float x,y,a,b,c,d;
+	printf("Введите числа в СТАНДАРТНОЙ ФОРМЕ.При наличии отрицательного мнимого элемента вводить:a+-bi\n ");
 	printf("Введите число в формате a+bi\n ");
 	scanf("%f+%fi", &x, &y);
 	printf("Введите число в формате a+bi\n ");
@@ -13,3 +14,4 @@ int main() {
 	printf("(%.3f)+(%.3fi)", c, d);
 	return 0;
 }
+
