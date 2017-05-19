@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+#define N 1000000 
+
+float mainFunction(float x) {
+	float function;
+	function = x*x;
+	return function;
+}
+
+int main()
+{   char znak;
+	printf(" Enter accuracy of the value(Max:9): ");
+	scanf("%c", &znak);
+	char string[] = "%.zf\n";
+	string[2] = znak;
+
+	float h, a, b, x;
+	double S = 0;
+	const float pi = 3.14159;
+	printf("Lower bound : ");
+	scanf("%f", &a);
+	printf("Upper bound: ");
+	scanf("%f", &b);
+	h = (b - a) / N;
+	x = a + h;
+	while (x < b)
+	{
+		S = S + 4 * mainFunction(x);
+		x = x + h;
+		if (x >= b)
+			break;
+		S = S + 2 * mainFunction(x);
+		x = x + h;
+	}
+
+	S = ((h/3)*(mainFunction(a) + mainFunction(b) + S)); 
+	printf(string,S);
+	return 0;
+}
